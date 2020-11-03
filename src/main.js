@@ -3,10 +3,21 @@ import Vue from 'vue'
 Vue.component('lps-component', {
   data() {
     return {
-      titulo: 'Curso de vuejs'
+      titulo: 'Curso de vuejs',
+      contador: 0
     }
   },
-  template: '<h1>{{titulo}}</h1>'
+  methods: {
+    incrementar: function () {
+      this.contador++
+    }
+  },
+  template: `
+  <div>
+    <h1>{{titulo}}</h1>
+    <button @click="incrementar"> Clicado {{ contador }} vezes</button> 
+  </div>
+  `
 })
 
 new Vue({
